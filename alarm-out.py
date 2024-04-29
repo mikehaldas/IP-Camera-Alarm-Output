@@ -1,6 +1,7 @@
 """
 A simple commmand line Python application that uses the Viewtron
 API camera API to trigger the alarm relay output on an IP camera.
+Author: Mike Haldas mike@viewtron.com
 """
 
 import requests
