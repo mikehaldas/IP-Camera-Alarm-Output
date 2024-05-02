@@ -6,8 +6,9 @@ IP camera API to control the alarm relay output of an IP camera.
 You can also query the camera for the current alarm status.
 This app works by connecting directly to a Viewtron IP camera over HTTP.
 The app also connect to a Viewtron DVR / NVR and control the alarm
-relay outputs of those devices. You can learn more about all Viewtron
-products at www.Viewtron.com.
+relay outputs of those devices. You can find all of the Viewtron IP cameras
+with alarm relay output ports on this page.
+https://www.cctvcamerapros.com/IP-Camera-Digital-IO-s/716.htm
 """
 
 import requests
@@ -22,7 +23,7 @@ METHODS = {'1': 'ManualAlarmOut', '2': 'GetAlarmStatus'}
 IP = '192.168.0.33'
 PORT = '80'
 USER_ID = 'admin'
-PASSWORD = '123456'
+PASSWORD = 'XXXXXXX' # change this to your password
 
 headers = {'Content-Type': 'application/xml'}
 while True:
@@ -58,10 +59,6 @@ while True:
 	else:
 
 		url = "http://" + IP + ":" + PORT + "/" + METHODS[method]
-	#	url = "http://" + IP + ":" + PORT + "/ManualAlarmOut/5"
-	#	url = "http://" + IP + ":" + PORT + "/GetDeviceInfo"
-	#	url = "http://" + IP + ":" + PORT + "/GetAlarmStatus"
-
 
 		api_response = requests.post(
 			url=url,
@@ -71,7 +68,6 @@ while True:
 		)
 
 	print("Processing API URL: " + url)
-
 	print(api_response.status_code)
 	print(api_response.text)
 
