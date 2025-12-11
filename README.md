@@ -1,4 +1,4 @@
-# IP-Camera-Alarm-Output
+# Viewtron IP Camera Alarm Output
 Simple Python application to trigger the alarm relay output on Viewtron IP cameras.
 
 Some Viewtron IP cameras have alarm input and alarm relay output ports. The input / output
